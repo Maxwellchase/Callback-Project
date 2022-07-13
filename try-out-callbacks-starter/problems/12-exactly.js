@@ -27,8 +27,16 @@ console.log(result4); // true
 
 *******************************************************************************/
 
-let exactly = function() {
+let exactly = function(array, num, cb) {
+    let counter = 0;
 
+    array.forEach(el => {
+        if(cb(el)) counter ++;
+    })
+
+    // if(num === counter) return true;
+    // else return false;
+    return num === counter;
 };
 
 

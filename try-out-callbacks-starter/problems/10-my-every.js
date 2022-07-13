@@ -21,13 +21,20 @@ console.log(myEvery(['book', 'door'], hasO));           // true
 console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 *******************************************************************************/
 
-let myEvery = function() {
-
+let myEvery = function(array, cb) {
+    for(let i = 0; i < array.length; i++){
+        let el = array[i]
+        if(!cb(el)){
+            return false;
+        }
+    }
+    return true;
 };
 
-
-
-
+// console.log(myEvery([4, 8, 6, 10], isEven));            // true
+// console.log(myEvery([4, 7, 6, 10], isEven));            // false
+// console.log(myEvery(['book', 'door'], hasO));           // true
+// console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
